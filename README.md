@@ -7,8 +7,16 @@
 
 3，添加Indexer等三个插件，自动生成cstags需要的tags文件
 
-4, 添加fswitch插件，切换.h与.cpp文件
+4，添加fswitch插件，切换.h与.cpp文件
 
-5，开启代码折叠
+5，添加Nerdcommenter插件，快速注释代码
 
-6，配置使用cscope
+6，开启代码折叠
+
+7，配置使用cscope
+
+#安装
+git clone https://github.com/cnxiejb/x-vim.git x-vim
+cd x-vim
+sh -x setup.sh
+
