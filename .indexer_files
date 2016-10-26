@@ -1,0 +1,20 @@
+#此文件帮助indexer指定要生成tags的工程目录位置及语言文件类型
+#路径一定要是绝对路径
+
+[ffmpeg]
+option:ctags_params = "--langmap=c:.c.h --languages=c"
+/Users/xiejinbao/Documents/GitHub/ffmpeg
+
+[webrtc]
+option:ctags_params = "--languages=c++"
+/Users/xiejinbao/Documents/webrtc-checkout/src/webrtc
+/Users/xiejinbao/Documents/webrtc-checkout/src/third_party
+/Users/xiejinbao/Documents/webrtc-checkout/src/base
+
+[obs]
+option:ctags_params = "--langmap=c:.c.h --languages=c"
+/Users/xiejinbao/Documents/GitHub/obs-studio/libobs
+/Users/xiejinbao/Documents/GitHub/obs-studio/plugins
+/Users/xiejinbao/Documents/GitHub/obs-studio/UI
+
+
