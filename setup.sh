@@ -1,9 +1,9 @@
 #!/bin/bash
-echo "安装将花费一定时间，请耐心等待直到安装完成^_^"
+#echo "安装将花费一定时间，请耐心等待直到安装完成^_^"
 if which apt-get >/dev/null; then
-	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git
+    sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git
 elif which yum >/dev/null; then
-	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel	
+    sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel	
 fi
 
 ##Add HomeBrew support on  Mac OS
@@ -24,10 +24,9 @@ mv -f ~/.vim/.indexer_files ~/
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 echo "正在安装Ycm"
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
-git submodule udpate --init --recursive
-cd ~/.vim/bundle/YouCompleteMe
-/.install.py --all
-
+cd ~/.vim/bundle/YouCompleteMe/
+git submodule update --init --recursive
+./install.py --all
 echo "正在努力为您安装bundle程序" > cnxiejb
 echo "安装完毕将自动退出" >> cnxiejb
 echo "请耐心等待" >> cnxiejb
