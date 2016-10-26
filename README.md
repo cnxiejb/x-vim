@@ -17,6 +17,8 @@
 
 #安装
 git clone https://github.com/cnxiejb/x-vim.git x-vim
+
 cd x-vim
+
 sh -x setup.sh
 
