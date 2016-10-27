@@ -469,6 +469,9 @@ Bundle 'The-NERD-Commenter'
 Bundle 'django_templates.vim'
 Bundle 'Django-Projects'
 
+"Nerdtree
+Bundle 'scrooloose/nerdtree'
+
 "YouCompleterMe
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
