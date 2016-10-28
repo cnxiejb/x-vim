@@ -55,6 +55,10 @@ set laststatus=2    " 启动显示状态行(1),总是显示状态行(2)
 
 set foldenable      " 允许折叠  
 set foldmethod=syntax   " 手动折叠  
+set foldcolumn=0
+setlocal foldlevel=1
+set foldlevelstart=99
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
 " 显示中文帮助
@@ -469,9 +473,6 @@ Bundle 'The-NERD-Commenter'
 Bundle 'django_templates.vim'
 Bundle 'Django-Projects'
 
-"Nerdtree
-Bundle 'scrooloose/nerdtree'
-
 "YouCompleterMe
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
@@ -480,6 +481,7 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_cache_omnifunc=0
+let g:ycm_server_python_interpreter='/usr/bin/python'
 "fswitch
 Bundle 'derekwyatt/vim-fswitch'
 
