@@ -22,3 +22,7 @@ cd x-vim
 
 sh -x setup.sh
 
+#bug
+有些系统，可能会报错说python异常退出（Mac）
+需要注释掉~/.vimrc中的ycm python版本的指定即可。
+
