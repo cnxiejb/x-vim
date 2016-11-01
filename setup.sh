@@ -24,11 +24,18 @@ mv -f ~/.vimrc ~/.vimrc_old
 mv -f ~/.vim/.vimrc ~/
 mv -f ~/.vim/.indexer_files ~/
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
 echo "正在安装Ycm"
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
 cd ~/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
-./install.py --all
+if ['which clang']
+then
+    ./install.py --clang-completer --system-libclang
+else
+    ./install.py --clang-completer
+fi
+
 echo "正在努力为您安装bundle程序" > cnxiejb
 echo "安装完毕将自动退出" >> cnxiejb
 echo "请耐心等待" >> cnxiejb
