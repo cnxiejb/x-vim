@@ -1,14 +1,14 @@
 #!/bin/bash
 #echo "安装将花费一定时间，请耐心等待直到安装完成^_^"
-if which apt-get >/dev/null; then
+if hash apt-get 2>/dev/null; then
     sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev python-dev3 git cscope
     sudo apt-get install build-essential cmake
-elif which yum >/dev/null; then
+elif hash yum 2>/dev/null; then
     sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel python-devel3 cscope	
 fi
 
 ##Add HomeBrew support on  Mac OS
-if which brew >/dev/null;then
+if hash brew 2>/dev/null;then
     echo "You are using HomeBrew tool"
     brew install vim ctags git astyle cscope
 fi
@@ -29,8 +29,7 @@ echo "正在安装Ycm"
 git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
 cd ~/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
-if ['which clang']
-then
+if hash clang 2>/dev/null;then
     ./install.py --clang-completer --system-libclang
 else
     ./install.py --clang-completer
