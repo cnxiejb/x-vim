@@ -485,6 +485,7 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_cache_omnifunc=0
 let g:ycm_server_python_interpreter='/usr/bin/python'
+inoremap <leader>; <C-x><C-o>
 "fswitch
 Bundle 'derekwyatt/vim-fswitch'
 
