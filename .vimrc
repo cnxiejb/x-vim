@@ -3,7 +3,7 @@ let g:mapleader = ';'
 
 set sw=4
 set ts=4
-set et
+    set et
 set smarttab
 set smartindent
 set lbr
@@ -120,6 +120,7 @@ fun! ToggleFullscreen()
     call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
 endf
 autocmd VimEnter * call ToggleFullscreen()
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -259,7 +260,7 @@ map <F6> :call FormartSrc()<CR><CR>
 func FormartSrc()
     exec "w"
     if &filetype == 'c'
-        exec "!astyle --style=ansi -a --suffix=none %"
+        exec "!astyle --style=ansi --suffix=none %"
     elseif &filetype == 'cpp' || &filetype == 'hpp'
         exec "r !astyle --style=ansi --one-line=keep-statements -a --suffix=none %> /dev/null 2>&1"
     elseif &filetype == 'perl'
@@ -284,6 +285,7 @@ endfunc
 nnoremap <leader>gf :YcmCompleter GoToInclude<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <F4> :YcmCompleter GetType<CR>
+nnoremap <F7> :YcmCompleter FixIt<CR>
 
 "fswitch
 nmap <silent> <leader>sw :FSHere<cr>
@@ -473,9 +475,6 @@ Bundle 'The-NERD-Commenter'
 Bundle 'django_templates.vim'
 Bundle 'Django-Projects'
 
-"nerdtree
-Bundle 'scrooloose/nerdtree'
-
 "YouCompleterMe
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'rdnetto/YCM-Generator'
@@ -484,8 +483,9 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_min_num_of_chars_for_completion=1
 let g:ycm_cache_omnifunc=0
-let g:ycm_server_python_interpreter='/usr/bin/python'
 inoremap <leader>; <C-x><C-o>
+"let g:ycm_server_python_interpreter='/usr/bin/python'
+
 "fswitch
 Bundle 'derekwyatt/vim-fswitch'
 
