@@ -1,10 +1,10 @@
 #!/bin/bash
 #echo "安装将花费一定时间，请耐心等待直到安装完成^_^"
 if hash apt-get 2>/dev/null; then
-    sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev python-dev3 git cscope clang
+    sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev python3-dev git cscope clang
     sudo apt-get install build-essential cmake
 elif hash yum 2>/dev/null; then
-    sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel python-devel3 cscope clang
+    sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel python3-devel cscope clang
 fi
 
 ##Add HomeBrew support on  Mac OS
